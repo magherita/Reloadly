@@ -1,41 +1,49 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Database.Repositories.Users;
+using Database.Configurations;
 using Domain.User;
+using Microsoft.EntityFrameworkCore;
 
-namespace Database.Repositories
+namespace Database.Repositories.Users
 {
     public class UserRepository : IUserRepository
     {
-        public UserRepository()
+        private readonly FlutterwaveHackathonContext _context;
+
+        public UserRepository(FlutterwaveHackathonContext context)
         {
-            
+            _context = context;
         }
-        public Task CreateUserAsync(User user, CancellationToken cancellationToken = default)
+        public async Task CreateUserAsync(User user, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
-        public Task<User> RetrieveUserAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task<User> RetrieveUserAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            return await _context.Users.Where(d => d.Id == id).FirstOrDefaultAsync(cancellationToken);
+
         }
 
-        public Task<List<User>> RetrieveUserAsync(CancellationToken cancellationToken = default)
+        public async Task<List<User>> RetrieveUserAsync(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            return await _context.Users.ToListAsync(cancellationToken);
         }
 
         public void UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            _context.Users.Update(user);
+            _context.SaveChanges();
         }
 
         public void DeleteUser(User user)
         {
-            throw new NotImplementedException();
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
     }
 }
