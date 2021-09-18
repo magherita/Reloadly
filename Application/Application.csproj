@@ -4,10 +4,4 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Models\Donations" />
-      <Folder Include="Models\Users" />
-      <Folder Include="Models\Wallets" />
-    </ItemGroup>
-
 </Project>
