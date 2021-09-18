@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "k/+AquD7FzQL0YMW4/LpcEEYLt9rG4TLKo5o/El2fDJB0HcIvcgHKWNHr4hU+xEqTRpd+e1G8X8LfKJ00myqXQ==",
+  "dgSpecHash": "bXi9f0KtB67ZW7ZxChckSPZbQiFtIX66VyE6wiDiX0BEIR575is0nt1TNdIX/JIH3g797lWctESzZKIpW7bTug==",
   "success": true,
   "projectFilePath": "/home/dani/RiderProjects/FlutterwaveHackathon/Api/Api.csproj",
   "expectedPackageFiles": [
+    "/home/dani/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/home/dani/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.entityframeworkcore/5.0.10/microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.10/microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.10/microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",
+    "/home/dani/.nuget/packages/microsoft.entityframeworkcore.design/5.0.10/microsoft.entityframeworkcore.design.5.0.10.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.entityframeworkcore.relational/5.0.10/microsoft.entityframeworkcore.relational.5.0.10.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.extensions.caching.abstractions/5.0.0/microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",

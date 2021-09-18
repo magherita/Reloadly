@@ -4,13 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Database.Configurations
 {
-    public class FlutterwaveHackathonContext : DbContext
+    public class FlutterwaveHackathonContext : DbContext, IFlutterwaveHackathonContext
     {
-        public DbSet<User> Users { get; set; }
-        public  DbSet<Donation> Donations { get; set; }
+       
         public FlutterwaveHackathonContext(DbContextOptions<FlutterwaveHackathonContext> options) : base(options)
         {
             
         }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Donation> Donations { get; set; }
     }
 }
