@@ -48,7 +48,7 @@ namespace Database.Collections
             _walletCollection.ReplaceOne(w => w.Id == walletId, wallet);
         }
 
-        public void DeleteUserByWallet(string walletId)
+        public void DeleteWalletById(string walletId)
         {
             _walletCollection.DeleteOne(w => w.Id == walletId);
         }
