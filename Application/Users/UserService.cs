@@ -10,9 +10,9 @@ namespace Application.Users
 {
     public class UserService : IUserService
     {
-        private readonly UserCollection _userCollection;
+        private readonly IUserCollection _userCollection;
 
-        public UserService(UserCollection userCollection)
+        public UserService(IUserCollection userCollection)
         {
             _userCollection = userCollection;
         }
@@ -102,19 +102,19 @@ namespace Application.Users
             {
                 throw new Exception("User Id is empty");
             }
-            var currentWallet = _userCollection.GetUserById(userId).Result;
+            var currentUser = _userCollection.GetUserById(userId).Result;
 
-            if (currentWallet == null)
+            if (currentUser == null)
             {
-                throw new Exception("Book does not exist");
+                throw new Exception("User does not exist");
             }
 
-            currentWallet.FirstName = model.FirstName;
-            currentWallet.LastName = model.LastName;
-            currentWallet.Email = model.Email;
-            currentWallet.PhoneNumber = model.PhoneNumber;
+            currentUser.FirstName = model.FirstName;
+            currentUser.LastName = model.LastName;
+            currentUser.Email = model.Email;
+            currentUser.PhoneNumber = model.PhoneNumber;
             
-            _userCollection.UpdateUser(userId, currentWallet);
+            _userCollection.UpdateUser(userId, currentUser);
         }
 
         public void DeleteUserById(DeleteUserModel model)

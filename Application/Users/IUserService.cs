@@ -14,7 +14,7 @@ namespace Application.Users
 
         Task<GetUserModel> CreateUser(AddUserModel model, CancellationToken cancellationToken = default);
 
-        void UpdateUser(string walletId, UpdateUserModel model);
+        void UpdateUser(string userId, UpdateUserModel model);
 
         void DeleteUserById(DeleteUserModel model);
     }

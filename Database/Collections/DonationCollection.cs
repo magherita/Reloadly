@@ -17,7 +17,7 @@ namespace Database.Collections
             var client = new MongoClient(settings);
             var dbName = configuration.GetValue<string>("MongoDb:Database");
             var database = client.GetDatabase(dbName);
-            var donationCollectionName = configuration.GetValue<string>("MongoDB: DonationsCollection");
+            var donationCollectionName = configuration.GetValue<string>("MongoDB: DonationCollection");
 
             _donationsCollection = database.GetCollection<Donation>(donationCollectionName);
 

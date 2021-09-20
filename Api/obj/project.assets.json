@@ -1339,7 +1339,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Database": "1.0.0"
+          "Database": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
