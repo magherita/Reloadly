@@ -1,5 +1,3 @@
-using System;
-
 namespace Domain.Donation
 {
     public class Donation

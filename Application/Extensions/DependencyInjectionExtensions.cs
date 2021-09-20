@@ -1,8 +1,6 @@
 using Application.Donations;
 using Application.Users;
 using Application.Wallets;
-using Domain.Donation;
-using Domain.Wallet;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Extensions

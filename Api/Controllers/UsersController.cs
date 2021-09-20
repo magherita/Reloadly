@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Application.Models.Donations;
+using Application.Users;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -11,36 +10,55 @@ namespace Api.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        // GET: api/Users
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET: api/Users/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+       private readonly IUserService _userService;
 
-        // POST: api/Users
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+       public UsersController(IUserService userService)
+       {
+           _userService = userService;
+       }
+       // GET: api/Wallets
+       [HttpGet]
+       [HttpGet]
+       public async Task<ActionResult<List<GetUserModel>>> GetAsync()
+       {
+           var response = await _userService.GetUsers();
 
-        // PUT: api/Users/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+           return Ok(response);
+       }
+       // GET: api/Wallets/5
+       [HttpGet("{id}")]
+       public async Task<ActionResult<GetUserModel>> GetUserByIdAsync([FromRoute] string id)
+       {
+           var response = await _userService.GetUserById(id);
 
-        // DELETE: api/Users/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+           return Ok(response);
+       }
+       // POST: api/Wallets
+       [HttpPost]
+       public async Task<ActionResult<GetUserModel>> PostAsync([FromBody] AddUserModel model)
+       {
+           var response = await _userService.CreateUser(model);
+
+           return Ok(response);
+       }
+
+       // PUT: api/Wallets/5
+       [HttpPut("{id}")]
+       public IActionResult Put([FromRoute] string id, [FromBody] UpdateUserModel model)
+       {
+           _userService.UpdateUser(id, model);
+
+           return NoContent();
+       }
+
+       // DELETE: api/Wallets/5
+       [HttpDelete("{id}")]
+       public IActionResult Delete([FromRoute] string id)
+       {
+           _userService.DeleteUserById(new DeleteUserModel() { Id = id });
+
+           return NoContent();
+       }
     }
 }
