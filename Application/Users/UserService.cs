@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Models.Donations;
+using Application.Models.Users;
 using Database.Collections;
 using Domain.User;
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application.Models.Donations;
+using Application.Models.Users;
 using Application.Users;
 using Microsoft.AspNetCore.Mvc;
 

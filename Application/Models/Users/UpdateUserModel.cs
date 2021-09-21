@@ -1,4 +1,4 @@
-namespace Application.Models.Donations
+namespace Application.Models.Users
 {
     public class UpdateUserModel
     {
