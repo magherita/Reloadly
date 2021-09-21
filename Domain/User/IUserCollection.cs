@@ -11,6 +11,6 @@ namespace Domain.User
         Task<User> CreateUser(User user, CancellationToken cancellationToken = default);
         void UpdateUser(string userId, User user);
         void DeleteUserById(string userId);
-
+        string Authenticate(string email, string password);
     }
 }

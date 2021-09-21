@@ -233,6 +233,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.13.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.2, )"
             }
           },
           "imports": [

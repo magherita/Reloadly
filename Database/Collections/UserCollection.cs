@@ -1,8 +1,13 @@
+using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Domain.User;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 
 namespace Database.Collections
@@ -10,6 +15,7 @@ namespace Database.Collections
     public class UserCollection : IUserCollection
     {
         private IMongoCollection<User> _userCollection;
+        private readonly string key;
 
         public UserCollection(IConfiguration configuration)
         {
@@ -19,6 +25,7 @@ namespace Database.Collections
             var dbName = configuration.GetValue<string>("MongoDb:Database");
             var database = client.GetDatabase(dbName);
             var userCollectionName = configuration.GetValue<string>("MongoDB: UserCollection");
+            this.key = configuration.GetSection("JwtKey").ToString();
 
             _userCollection = database.GetCollection<User>(userCollectionName);
 
@@ -51,6 +58,29 @@ namespace Database.Collections
         public void DeleteUserById(string userId)
         {
             _userCollection.DeleteOne(u => u.Id == userId);
+        }
+
+        public string Authenticate(string email, string password)
+        {
+            var user = _userCollection.Find(x => x.Email == email && x.Password == password).FirstOrDefault();
+            if (user == null)
+                return null;
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenKey = Encoding.ASCII.GetBytes(key);
+            var toeknDescriptior = new SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Email, email),
+                }),
+                Expires = DateTime.Now.AddHours(1),
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(tokenKey),
+                    SecurityAlgorithms.HmacSha256Signature
+                )
+            };
+            var token = tokenHandler.CreateToken(toeknDescriptior);
+            return tokenHandler.WriteToken(token);
         }
     }
 }

@@ -3010,7 +3010,8 @@
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Microsoft.Extensions.Configuration.Binder": "5.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
-          "MongoDB.Driver": "2.13.1"
+          "MongoDB.Driver": "2.13.1",
+          "System.IdentityModel.Tokens.Jwt": "6.12.2"
         },
         "compile": {
           "bin/placeholder/Database.dll": {}

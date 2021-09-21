@@ -127,5 +127,10 @@ namespace Application.Users
 
             _userCollection.DeleteUserById(model.Id);
         }
+
+        public string Authenticate(string email, string password)
+        {
+            var user = _userCollection.Find(x => x.Email == email && x.Password ==  )
+        }
     }
 }
