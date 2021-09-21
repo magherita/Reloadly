@@ -55,6 +55,14 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -234,9 +242,17 @@
               "target": "Package",
               "version": "[2.13.1, )"
             },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.12.2, )"
+            },
+            "mongocsharpdriver": {
+              "target": "Package",
+              "version": "[2.13.1, )"
             }
           },
           "imports": [

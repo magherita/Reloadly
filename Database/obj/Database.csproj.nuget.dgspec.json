@@ -58,9 +58,17 @@
               "target": "Package",
               "version": "[2.13.1, )"
             },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.12.2, )"
+            },
+            "mongocsharpdriver": {
+              "target": "Package",
+              "version": "[2.13.1, )"
             }
           },
           "imports": [

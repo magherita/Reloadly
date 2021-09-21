@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PVtox3QrZyh8nlbCJSadEzKfIkU2Sq14k6MsLxGfEB7C3aCkBWr8v50wt/rM/jGiMegQovix+9vR1nRy80E8QQ==",
+  "dgSpecHash": "O8owoppK4d6uGoS0pUGxBAhXvGfw8bev4990B5NcUcCWosBe7/pQSY39NZES60ZCa+NLsX+e9t49CYeaCQ1/6Q==",
   "success": true,
   "projectFilePath": "/home/dani/RiderProjects/FlutterwaveHackathon/Api/Api.csproj",
   "expectedPackageFiles": [
@@ -75,6 +75,7 @@
     "/home/dani/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
     "/home/dani/.nuget/packages/mimekit/1.10.0/mimekit.1.10.0.nupkg.sha512",
+    "/home/dani/.nuget/packages/mongocsharpdriver/2.13.1/mongocsharpdriver.2.13.1.nupkg.sha512",
     "/home/dani/.nuget/packages/mongodb.bson/2.13.1/mongodb.bson.2.13.1.nupkg.sha512",
     "/home/dani/.nuget/packages/mongodb.driver/2.13.1/mongodb.driver.2.13.1.nupkg.sha512",
     "/home/dani/.nuget/packages/mongodb.driver.core/2.13.1/mongodb.driver.core.2.13.1.nupkg.sha512",

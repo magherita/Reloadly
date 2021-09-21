@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dGghiW3UrHU9/7NktUuM4Y6SUwVPUg0myjY43W9RpbxTupmQI0Qq1z/FiZxu2hY2HugUe+aAgbf4DnzlaTkdSQ==",
+  "dgSpecHash": "w7tY54Tgy3SJ2Wd2+cW2MdZMxfYobcNW8bz5bovW3E9PJLnW+0MhUMqY0VyjpQ0xrdUUHHbmjor4StA64xHleA==",
   "success": true,
   "projectFilePath": "/home/dani/RiderProjects/FlutterwaveHackathon/Database/Database.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "/home/dani/.nuget/packages/microsoft.identitymodel.logging/6.12.2/microsoft.identitymodel.logging.6.12.2.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.identitymodel.tokens/6.12.2/microsoft.identitymodel.tokens.6.12.2.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.netcore.platforms/2.1.2/microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "/home/dani/.nuget/packages/mongocsharpdriver/2.13.1/mongocsharpdriver.2.13.1.nupkg.sha512",
     "/home/dani/.nuget/packages/mongodb.bson/2.13.1/mongodb.bson.2.13.1.nupkg.sha512",
     "/home/dani/.nuget/packages/mongodb.driver/2.13.1/mongodb.driver.2.13.1.nupkg.sha512",
     "/home/dani/.nuget/packages/mongodb.driver.core/2.13.1/mongodb.driver.core.2.13.1.nupkg.sha512",

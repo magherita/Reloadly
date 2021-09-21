@@ -624,6 +624,20 @@
           "lib/netstandard1.3/MimeKit.dll": {}
         }
       },
+      "mongocsharpdriver/2.13.1": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.13.1",
+          "MongoDB.Driver": "2.13.1",
+          "MongoDB.Driver.Core": "2.13.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/MongoDB.Driver.Legacy.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Driver.Legacy.dll": {}
+        }
+      },
       "MongoDB.Bson/2.13.1": {
         "type": "package",
         "dependencies": {
@@ -2325,7 +2339,9 @@
           "Microsoft.Extensions.Configuration.Binder": "5.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "MongoDB.Driver": "2.13.1",
-          "System.IdentityModel.Tokens.Jwt": "6.12.2"
+          "MongoDB.Driver.Core": "2.13.1",
+          "System.IdentityModel.Tokens.Jwt": "6.12.2",
+          "mongocsharpdriver": "2.13.1"
         },
         "compile": {
           "bin/placeholder/Database.dll": {}
@@ -3220,6 +3236,27 @@
         "lib/wpa81/Portable.Text.Encoding.dll",
         "mimekit.1.10.0.nupkg.sha512",
         "mimekit.nuspec"
+      ]
+    },
+    "mongocsharpdriver/2.13.1": {
+      "sha512": "GmTNymrMbACXQgJecMjjK7nqlNck0Fwwl62DSEhIu0y6wb7yqDdUgZP6ZGLF3YcQfnTtqLiloWRwESZDtP4JgQ==",
+      "type": "package",
+      "path": "mongocsharpdriver/2.13.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/net452/MongoDB.Driver.Legacy.dll",
+        "lib/net452/MongoDB.Driver.Legacy.xml",
+        "lib/netstandard1.5/MongoDB.Driver.Legacy.dll",
+        "lib/netstandard1.5/MongoDB.Driver.Legacy.xml",
+        "lib/netstandard2.0/MongoDB.Driver.Legacy.dll",
+        "lib/netstandard2.0/MongoDB.Driver.Legacy.xml",
+        "lib/netstandard2.1/MongoDB.Driver.Legacy.dll",
+        "lib/netstandard2.1/MongoDB.Driver.Legacy.xml",
+        "mongocsharpdriver.2.13.1.nupkg.sha512",
+        "mongocsharpdriver.nuspec",
+        "packageIcon.png"
       ]
     },
     "MongoDB.Bson/2.13.1": {
