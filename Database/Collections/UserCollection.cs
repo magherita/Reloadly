@@ -62,12 +62,14 @@ namespace Database.Collections
 
         public string Authenticate(string email, string password)
         {
-            var user = _userCollection.Find(x => x.Email == email && x.Password == password).FirstOrDefault();
+            var cursor = _userCollection.Find(x => x.Email == email && x.Password == password);
+            var user = cursor.FirstOrDefault();
+            
             if (user == null)
                 return null;
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.ASCII.GetBytes(key);
-            var toeknDescriptior = new SecurityTokenDescriptor()
+            var tokenDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
@@ -79,7 +81,7 @@ namespace Database.Collections
                     SecurityAlgorithms.HmacSha256Signature
                 )
             };
-            var token = tokenHandler.CreateToken(toeknDescriptior);
+            var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
     }

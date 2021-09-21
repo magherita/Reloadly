@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Application.Models.Donations;
 using Application.Models.Users;
 using Application.Users;
+using Domain.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -13,10 +15,12 @@ namespace Api.Controllers
     {
 
        private readonly IUserService _userService;
+       private readonly IUserCollection _userCollection;
 
-       public UsersController(IUserService userService)
+       public UsersController(IUserService userService, IUserCollection userCollection)
        {
            _userService = userService;
+           _userCollection = userCollection;
        }
        // GET: api/Wallets
        [HttpGet]
@@ -60,6 +64,18 @@ namespace Api.Controllers
            _userService.DeleteUserById(new DeleteUserModel() { Id = id });
 
            return NoContent();
+       }
+        
+       // Authentication
+       [AllowAnonymous]
+       [Route("authenticate")]
+       [HttpPost]
+       public ActionResult Login([FromBody] User user)
+       {
+           var token = _userCollection.Authenticate(user.Email, user.Password);
+           if (token == null)
+               return Unauthorized();
+           return Ok(new { token, user });
        }
     }
 }
