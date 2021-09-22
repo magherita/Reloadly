@@ -114,7 +114,14 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/dani/RiderProjects/FlutterwaveHackathon/Application/Application.csproj": {
+                "projectPath": "/home/dani/RiderProjects/FlutterwaveHackathon/Application/Application.csproj"
+              },
+              "/home/dani/RiderProjects/FlutterwaveHackathon/Database/Database.csproj": {
+                "projectPath": "/home/dani/RiderProjects/FlutterwaveHackathon/Database/Database.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

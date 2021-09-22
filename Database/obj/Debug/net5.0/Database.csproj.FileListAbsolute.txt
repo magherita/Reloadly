@@ -1,0 +1,15 @@
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/bin/Debug/net5.0/Database.deps.json
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/bin/Debug/net5.0/Database.dll
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/bin/Debug/net5.0/ref/Database.dll
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/bin/Debug/net5.0/Database.pdb
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/bin/Debug/net5.0/Domain.dll
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/bin/Debug/net5.0/Domain.pdb
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.csproj.AssemblyReference.cache
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.GeneratedMSBuildEditorConfig.editorconfig
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.AssemblyInfoInputs.cache
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.AssemblyInfo.cs
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.csproj.CoreCompileInputs.cache
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.csproj.CopyComplete
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.dll
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/ref/Database.dll
+/home/dani/RiderProjects/FlutterwaveHackathon/Database/obj/Debug/net5.0/Database.pdb
