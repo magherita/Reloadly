@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "O8owoppK4d6uGoS0pUGxBAhXvGfw8bev4990B5NcUcCWosBe7/pQSY39NZES60ZCa+NLsX+e9t49CYeaCQ1/6Q==",
+  "dgSpecHash": "m1dNvwQ3fNtWFGCMIAwZNzmczKDI85JzN8zzK71vCNlRqM2V5Ao8Z4Ki8X4xmcHrGcuZA4zyBE/sGjF+MN79Lg==",
   "success": true,
   "projectFilePath": "/home/dani/RiderProjects/FlutterwaveHackathon/Api/Api.csproj",
   "expectedPackageFiles": [
     "/home/dani/.nuget/packages/dnsclient/1.4.0/dnsclient.1.4.0.nupkg.sha512",
+    "/home/dani/.nuget/packages/flurl.http.signed/3.2.0/flurl.http.signed.3.2.0.nupkg.sha512",
+    "/home/dani/.nuget/packages/flurl.signed/3.0.2/flurl.signed.3.0.2.nupkg.sha512",
     "/home/dani/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/home/dani/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -81,7 +83,7 @@
     "/home/dani/.nuget/packages/mongodb.driver.core/2.13.1/mongodb.driver.core.2.13.1.nupkg.sha512",
     "/home/dani/.nuget/packages/mongodb.libmongocrypt/1.2.2/mongodb.libmongocrypt.1.2.2.nupkg.sha512",
     "/home/dani/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
-    "/home/dani/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
+    "/home/dani/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
     "/home/dani/.nuget/packages/portable.bouncycastle/1.8.1.1/portable.bouncycastle.1.8.1.1.nupkg.sha512",
     "/home/dani/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/home/dani/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

@@ -11,6 +11,29 @@
           "lib/netstandard2.1/DnsClient.dll": {}
         }
       },
+      "Flurl.Http.Signed/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Flurl.Signed": "3.0.2",
+          "Newtonsoft.Json": "12.0.2",
+          "System.Text.Encoding.CodePages": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Flurl.Http.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.Http.dll": {}
+        }
+      },
+      "Flurl.Signed/3.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Flurl.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1259,7 +1282,7 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -2993,6 +3016,22 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "ApiWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Flurl.Http.Signed": "3.2.0",
+          "Flurl.Signed": "3.0.2",
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ApiWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiWrapper.dll": {}
+        }
+      },
       "Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -3072,6 +3111,48 @@
         "lib/netstandard2.0/DnsClient.xml",
         "lib/netstandard2.1/DnsClient.dll",
         "lib/netstandard2.1/DnsClient.xml"
+      ]
+    },
+    "Flurl.Http.Signed/3.2.0": {
+      "sha512": "+FupQFl7K+nKrBGxVh0mVVLhLI5Wigc2vpEty2L76oxRHkIpms5UODeoodczjsTJ1pxlWtuxACqwyyQ1grJbKw==",
+      "type": "package",
+      "path": "flurl.http.signed/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.http.signed.3.2.0.nupkg.sha512",
+        "flurl.http.signed.nuspec",
+        "icon.png",
+        "lib/net461/Flurl.Http.dll",
+        "lib/net461/Flurl.Http.pdb",
+        "lib/net461/Flurl.xml",
+        "lib/net472/Flurl.Http.dll",
+        "lib/net472/Flurl.Http.pdb",
+        "lib/net472/Flurl.xml",
+        "lib/netstandard2.0/Flurl.Http.dll",
+        "lib/netstandard2.0/Flurl.Http.pdb",
+        "lib/netstandard2.0/Flurl.xml"
+      ]
+    },
+    "Flurl.Signed/3.0.2": {
+      "sha512": "Fe9UwkQ8UVWj0HqxNykTFIjy59smuwPr4q1jE/FqNpLIw4kHjS9kJwj6y6UNhSXYqtiaKzqZvZb+JbSz0FUuhQ==",
+      "type": "package",
+      "path": "flurl.signed/3.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.signed.3.0.2.nupkg.sha512",
+        "flurl.signed.nuspec",
+        "icon.png",
+        "lib/net461/Flurl.dll",
+        "lib/net461/Flurl.pdb",
+        "lib/net461/Flurl.xml",
+        "lib/net472/Flurl.dll",
+        "lib/net472/Flurl.pdb",
+        "lib/net472/Flurl.xml",
+        "lib/netstandard2.0/Flurl.dll",
+        "lib/netstandard2.0/Flurl.pdb",
+        "lib/netstandard2.0/Flurl.xml"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -4947,10 +5028,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/11.0.2",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4973,7 +5054,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
     },
@@ -9556,6 +9637,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "ApiWrapper/1.0.0": {
+      "type": "project",
+      "path": "../ApiWrapper/ApiWrapper.csproj",
+      "msbuildProject": "../ApiWrapper/ApiWrapper.csproj"
+    },
     "Application/1.0.0": {
       "type": "project",
       "path": "../Application/Application.csproj",
@@ -9574,6 +9660,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ApiWrapper >= 1.0.0",
       "Application >= 1.0.0",
       "Database >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.10",
@@ -9608,6 +9695,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "/home/dani/RiderProjects/FlutterwaveHackathon/ApiWrapper/ApiWrapper.csproj": {
+              "projectPath": "/home/dani/RiderProjects/FlutterwaveHackathon/ApiWrapper/ApiWrapper.csproj"
+            },
             "/home/dani/RiderProjects/FlutterwaveHackathon/Application/Application.csproj": {
               "projectPath": "/home/dani/RiderProjects/FlutterwaveHackathon/Application/Application.csproj"
             },

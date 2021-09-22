@@ -1,4 +1,5 @@
 using System.Text;
+using ApiWrapper.ReloadlyClient;
 using Application.Extensions;
 using Database.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -34,7 +35,7 @@ namespace Api
                             "http://www.contoso.com");
                     });
             });
-
+            services.AddRouting(x => x.LowercaseUrls = true);
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" }); });
             services.AddAuthentication(x =>
@@ -55,6 +56,7 @@ namespace Api
             });
             services.AddDatabaseLayer();
             services.AddApplicationLayer();
+            services.AddScoped<IReloadlyClient, ReloadlyClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
