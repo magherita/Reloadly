@@ -15,12 +15,20 @@ namespace Api.Controllers
         {
             _reloadlyClient = reloadlyClient;
         }
-        // GET
-        [HttpGet("GetToken")]
+        // POST
+        [HttpPost("GetToken")]
         public async Task<ActionResult<Response<GetAccessTokenResponse>>> GetAccessTokenAsync()
         {
             var response = await _reloadlyClient.GetAccessTokenAsync();
             return StatusCode(response.StatusCode, response);
         }
+        // GET
+        [HttpGet("view-balance")]
+        public async Task<ActionResult<Response<ViewBalanceResponse>>> ViewBalnceAsync()
+        {
+            var response = await _reloadlyClient.ViewBalanceAsync();
+            return StatusCode(response.StatusCode, response);
+        }
+
     }
 }

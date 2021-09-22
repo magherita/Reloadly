@@ -15,6 +15,7 @@ namespace ApiWrapper.ReloadlyClient
         public ReloadlyClient(IConfiguration configuration)
         {
             _configuration = configuration;
+            _accessTokenResponse = GetAccessTokenAsync().Result;
         }
 
         public async Task<Response<GetAccessTokenResponse>> GetAccessTokenAsync(CancellationToken cancellationToken = default)
@@ -59,9 +60,39 @@ namespace ApiWrapper.ReloadlyClient
             };
         }
 
-        public Task<Response<ViewBalanceResponse>> ViewBalanceAsync(CancellationToken cancellationToken = default)
+        public async Task<Response<ViewBalanceResponse>> ViewBalanceAsync(CancellationToken cancellationToken = default)
         {
-            throw new System.NotImplementedException();
+            if (_accessTokenResponse.Error != null)
+            {
+                new Response<ViewBalanceResponse>()
+                {
+                    StatusCode = _accessTokenResponse.StatusCode,
+                    Error = _accessTokenResponse.Error
+                };
+            }
+
+            var accessToken = _accessTokenResponse.Data.Access_Token;
+            var baseUrl = _configuration.GetValue<string>("Reloadly:BaseUrl");
+            
+            var result = await baseUrl.AllowAnyHttpStatus().WithOAuthBearerToken(accessToken).AppendPathSegment(EndPoints.ViewBalance).GetAsync();
+            
+            if (result.StatusCode >= 300)
+            {
+                var error = await result.GetJsonAsync<ErrorResponse>();
+                return new Response<ViewBalanceResponse>()
+                {
+                    StatusCode = result.StatusCode,
+                    Error = error
+                };
+            }
+
+            var data = await result.GetJsonAsync<ViewBalanceResponse>();
+
+            return new Response<ViewBalanceResponse>()
+            {
+                StatusCode = result.StatusCode,
+                Data = data
+            };
         }
     }
 }
