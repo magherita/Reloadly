@@ -9,7 +9,7 @@ namespace Database.Collections
 {
     public class DonationCollection : IDonationCollection
     {
-        private IMongoCollection<Donation> _donationsCollection;
+        private readonly IMongoCollection<Donation> _donationsCollection;
         public DonationCollection(IConfiguration configuration)
         {
             var connectionString = configuration.GetValue<string>("MongoDb:ConnectionString");

@@ -9,7 +9,7 @@ namespace Database.Collections
 {
     public class WalletCollection : IWalletCollection
     {
-        private IMongoCollection<Wallet> _walletCollection;
+        private readonly IMongoCollection<Wallet> _walletCollection;
 
         public WalletCollection(IConfiguration configuration)
         {

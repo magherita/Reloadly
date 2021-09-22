@@ -14,7 +14,7 @@ namespace Database.Collections
 {
     public class UserCollection : IUserCollection
     {
-        private IMongoCollection<User> _userCollection;
+        private readonly IMongoCollection<User> _userCollection;
         private readonly string key;
 
         public UserCollection(IConfiguration configuration)
