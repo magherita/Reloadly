@@ -74,7 +74,11 @@ namespace ApiWrapper.ReloadlyClient
             var accessToken = _accessTokenResponse.Data.Access_Token;
             var baseUrl = _configuration.GetValue<string>("Reloadly:BaseUrl");
             
-            var result = await baseUrl.AllowAnyHttpStatus().WithOAuthBearerToken(accessToken).AppendPathSegment(EndPoints.ViewBalance).GetAsync();
+            var result = await baseUrl
+                .AllowAnyHttpStatus()
+                .WithOAuthBearerToken(accessToken)
+                .AppendPathSegment(EndPoints.ViewBalance)
+                .GetAsync();
             
             if (result.StatusCode >= 300)
             {
