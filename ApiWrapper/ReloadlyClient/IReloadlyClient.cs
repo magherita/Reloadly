@@ -7,5 +7,6 @@ namespace ApiWrapper.ReloadlyClient
     public interface IReloadlyClient
     {
         Task<Response<GetAccessTokenResponse>> GetAccessTokenAsync(CancellationToken cancellationToken = default);
+        Task<Response<ViewBalanceResponse>> ViewBalanceAsync(CancellationToken cancellationToken = default);
     }
 }

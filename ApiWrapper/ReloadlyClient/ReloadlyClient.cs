@@ -11,7 +11,7 @@ namespace ApiWrapper.ReloadlyClient
     public class ReloadlyClient : IReloadlyClient
     {
         private readonly IConfiguration _configuration;
-
+        private Response<GetAccessTokenResponse> _accessTokenResponse;
         public ReloadlyClient(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -19,7 +19,7 @@ namespace ApiWrapper.ReloadlyClient
 
         public async Task<Response<GetAccessTokenResponse>> GetAccessTokenAsync(CancellationToken cancellationToken = default)
         {
-            var request = new GetAccessTokenRequest()
+            var request = new GetAccessTokenRequest
             {
                 Client_Id = _configuration.GetValue<string>("Reloadly:ClientId"),
                 Client_Secret = _configuration.GetValue<string>("Reloadly:ClientSecret"),
@@ -29,10 +29,13 @@ namespace ApiWrapper.ReloadlyClient
 
             var authUrl = _configuration.GetValue<string>("Reloadly:AuthUrl");
 
-            var result = await authUrl.AllowHttpStatus().AppendPathSegment(EndPoints.GetAccessToken).PostJsonAsync(
+            var result = await authUrl
+                .AllowAnyHttpStatus()
+                .AppendPathSegment(EndPoints.GetAccessToken)
+                .PostJsonAsync(
                 new
                 {
-                    client_Id = request.Client_Id,
+                    client_id = request.Client_Id,
                     client_secret = request.Client_Secret,
                     grant_type = request.Grant_Type,
                     audience = request.Audience
@@ -54,6 +57,11 @@ namespace ApiWrapper.ReloadlyClient
                 StatusCode = result.StatusCode,
                 Data = data
             };
+        }
+
+        public Task<Response<ViewBalanceResponse>> ViewBalanceAsync(CancellationToken cancellationToken = default)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
