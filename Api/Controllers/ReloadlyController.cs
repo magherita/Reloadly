@@ -24,11 +24,18 @@ namespace Api.Controllers
         }
         // GET
         [HttpGet("view-balance")]
-        public async Task<ActionResult<Response<ViewBalanceResponse>>> ViewBalnceAsync()
+        public async Task<ActionResult<Response<ViewBalanceResponse>>> ViewBalanceAsync()
         {
             var response = await _reloadlyClient.ViewBalanceAsync();
             return StatusCode(response.StatusCode, response);
         }
-
+        
+        // POST
+        [HttpPost("top-up")]
+        public async Task<ActionResult<Response<TopUpResponse>>> TopUpAsync()
+        {
+            var response = await _reloadlyClient.TopUpAsync();
+            return StatusCode(response.StatusCode, response);
+        }
     }
 }

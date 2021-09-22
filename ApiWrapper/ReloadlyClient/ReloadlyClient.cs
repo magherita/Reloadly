@@ -98,5 +98,74 @@ namespace ApiWrapper.ReloadlyClient
                 Data = data
             };
         }
+
+        public async Task<Response<TopUpResponse>> TopUpAsync(CancellationToken cancellationToken = default)
+        {
+            if (_accessTokenResponse.Error != null)
+            {
+                new Response<TopUpResponse>()
+                {
+                    StatusCode = _accessTokenResponse.StatusCode,
+                    Error = _accessTokenResponse.Error
+                };
+            }
+
+            var request = new TopUpRequest()
+            {
+                OperatorId = "",
+                Amount = "",
+                CustomIdentifier = "",
+                RecipientPhone = new RecipientPhone()
+                {
+                    CountryCode = "",
+                    Number = "",
+                },
+                SenderPhone = new SenderPhone()
+                {
+                    CountryCode = "",
+                    Number = ""
+                },
+            };
+            var accessToken = _accessTokenResponse.Data.Access_Token;
+            var baseUrl = _configuration.GetValue<string>("Reloadly:BaseUrl");
+            
+            var result = await baseUrl
+                .AllowAnyHttpStatus()
+                .WithOAuthBearerToken(accessToken)
+                .AppendPathSegment(EndPoints.TopUp)
+                .PostJsonAsync(new
+                {
+                    operatorId = request.OperatorId,
+                    amount = request.Amount,
+                    useLocalAmount = request.UseLocalAmount,
+                    customIdentifier = request.CustomIdentifier,
+                    receipientPhone = request.RecipientPhone,
+                    senderPhone = request.SenderPhone
+                });
+            
+            if (result.StatusCode >= 300)
+            {
+                var error = await result.GetJsonAsync<ErrorResponse>();
+                return new Response<TopUpResponse>()
+                {
+                    StatusCode = result.StatusCode,
+                    Error = error
+                };
+            }
+
+            var data = await result.GetJsonAsync<TopUpResponse>();
+
+            return new Response<TopUpResponse>()
+            {
+                StatusCode = result.StatusCode,
+                Data = data
+            };
+        }
+
+        public Task<Response<TopUpStatusResponse>> TopUpStatusAsync(CancellationToken cancellationToken = default)
+        {
+            throw new System.NotImplementedException();
+        }
+        
     }
 }
