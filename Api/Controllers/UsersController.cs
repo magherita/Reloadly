@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Application.Models.Donations;
 using Application.Models.Users;
 using Application.Users;
 using Domain.User;
@@ -65,17 +64,6 @@ namespace Api.Controllers
 
            return NoContent();
        }
-        
-       // Authentication
-       [AllowAnonymous]
-       [Route("authenticate")]
-       [HttpPost]
-       public ActionResult Login([FromBody] User user)
-       {
-           var token = _userCollection.Authenticate(user.Email, user.Password);
-           if (token == null)
-               return Unauthorized();
-           return Ok(new { token, user });
-       }
+       
     }
 }

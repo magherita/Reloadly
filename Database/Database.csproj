@@ -10,7 +10,6 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
       <PackageReference Include="mongocsharpdriver" Version="2.13.1" />
       <PackageReference Include="MongoDB.Driver" Version="2.13.1" />
-      <PackageReference Include="MongoDB.Driver.Core" Version="2.13.1" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.2" />
     </ItemGroup>
 

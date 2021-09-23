@@ -1,3 +1,5 @@
+using Domain.Location;
+
 namespace Application.Models.Users
 {
     public class UpdateUserModel
@@ -7,5 +9,6 @@ namespace Application.Models.Users
         public string  Email { get; set; }
         public string  PhoneNumber { get; set; }
         public string UserName { get; set; }
+        public  Location Location{ get; set; }
     }
 }

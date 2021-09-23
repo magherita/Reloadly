@@ -162,24 +162,14 @@
           "lib/netstandard2.1/MongoDB.Driver.Core.dll": {}
         },
         "contentFiles": {
-          "contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/win/snappy32.dll": {
-            "buildAction": "Content",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/win/snappy64.dll": {
-            "buildAction": "Content",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/netstandard2.1/Core/Compression/Zstandard/lib/win/libzstd.dll": {
-            "buildAction": "Content",
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
             "codeLanguage": "any",
             "copyToOutput": false
           }
         },
         "build": {
-          "build/MongoDB.Driver.Core.targets": {}
+          "build/_._": {}
         },
         "runtimeTargets": {
           "runtimes/win/native/libzstd.dll": {
@@ -916,7 +906,6 @@
       "Microsoft.Extensions.Configuration.Binder >= 5.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 5.0.0",
       "MongoDB.Driver >= 2.13.1",
-      "MongoDB.Driver.Core >= 2.13.1",
       "System.IdentityModel.Tokens.Jwt >= 6.12.2",
       "mongocsharpdriver >= 2.13.1"
     ]
@@ -975,10 +964,6 @@
             "version": "[5.0.0, )"
           },
           "MongoDB.Driver": {
-            "target": "Package",
-            "version": "[2.13.1, )"
-          },
-          "MongoDB.Driver.Core": {
             "target": "Package",
             "version": "[2.13.1, )"
           },

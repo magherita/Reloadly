@@ -1,10 +1,10 @@
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using ApiWrapper.ReloadlyClient.Responses;
 using ApiWrapper.Requests;
 using Flurl.Http;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Net.Http.Server;
 
 namespace ApiWrapper.ReloadlyClient
 {
@@ -112,20 +112,9 @@ namespace ApiWrapper.ReloadlyClient
 
             var request = new TopUpRequest()
             {
-                OperatorId = "",
-                Amount = "",
-                CustomIdentifier = "",
-                RecipientPhone = new RecipientPhone()
-                {
-                    CountryCode = "",
-                    Number = "",
-                },
-                SenderPhone = new SenderPhone()
-                {
-                    CountryCode = "",
-                    Number = ""
-                },
+
             };
+         
             var accessToken = _accessTokenResponse.Data.Access_Token;
             var baseUrl = _configuration.GetValue<string>("Reloadly:BaseUrl");
             
@@ -135,12 +124,10 @@ namespace ApiWrapper.ReloadlyClient
                 .AppendPathSegment(EndPoints.TopUp)
                 .PostJsonAsync(new
                 {
-                    operatorId = request.OperatorId,
-                    amount = request.Amount,
-                    useLocalAmount = request.UseLocalAmount,
-                    customIdentifier = request.CustomIdentifier,
-                    receipientPhone = request.RecipientPhone,
-                    senderPhone = request.SenderPhone
+                   operatorId = request.OperatorId,
+                   amount = request.Amount,
+                   receiverPhone = request.RecipientPhone,
+                   number = request.SenderPhone
                 });
             
             if (result.StatusCode >= 300)

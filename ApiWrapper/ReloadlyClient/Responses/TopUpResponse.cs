@@ -1,12 +1,4 @@
 // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
-public class BalanceInfo
-{
-    public double OldBalance { get; set; }
-    public double NewBalance { get; set; }
-    public string CurrencyCode { get; set; }
-    public string CurrencyName { get; set; }
-    public string UpdatedAt { get; set; }
-}
 
 public class TopUpResponse
 {
@@ -27,5 +19,4 @@ public class TopUpResponse
     public string DeliveredAmountCurrencyCode { get; set; }
     public string TransactionDate { get; set; }
     public string PinDetail { get; set; }
-    public BalanceInfo BalanceInfo { get; set; }
 }

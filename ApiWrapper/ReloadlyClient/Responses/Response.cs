@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace ApiWrapper.ReloadlyClient.Responses
 {
     public class Response<TResponse>

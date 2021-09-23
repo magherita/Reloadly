@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Models.Donations;
 using Application.Models.Users;
-using Database.Collections;
 using Domain.User;
 
 namespace Application.Users
@@ -20,12 +18,14 @@ namespace Application.Users
         public async Task<List<GetUserModel>> GetUsers(CancellationToken cancellationToken = default)
         {
             var results = await _userCollection.GetAll(cancellationToken);
+            
             if (results == null || results.Count < 1)
             {
                 return new List<GetUserModel>();
             }
 
             var response = new List<GetUserModel>();
+            
             foreach (var result in results)
             {
                 var model = new GetUserModel()
@@ -34,7 +34,7 @@ namespace Application.Users
                     FirstName = result.FirstName,
                     LastName = result.LastName,
                     Email = result.Email,
-                    UserName = result.UserName  
+                    PhoneNumber = result.PhoneNumber
                 };
 
                 response.Add(model);
@@ -62,8 +62,9 @@ namespace Application.Users
                 FirstName = result.FirstName,
                 LastName = result.LastName,
                 Email = result.Email,
-                UserName = result.UserName
+                PhoneNumber = result.PhoneNumber
             };
+            
             return response;
         }
 
@@ -79,17 +80,20 @@ namespace Application.Users
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
-                UserName = model.UserName
+                PhoneNumber = model.PhoneNumber
             };
+            
             var result = await _userCollection.CreateUser(user, cancellationToken);
+            
             var response = new GetUserModel()
             {
                 Id = result.Id,
                 FirstName = result.FirstName,
                 LastName = result.LastName,
                 Email = result.Email,
-                UserName = result.UserName
+                PhoneNumber = result.PhoneNumber
             };
+            
             return response;
         }
 

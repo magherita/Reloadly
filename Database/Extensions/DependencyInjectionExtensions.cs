@@ -1,7 +1,6 @@
 using Database.Collections;
 using Domain.Foundation;
 using Domain.User;
-using Domain.Wallet;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Database.Extensions
