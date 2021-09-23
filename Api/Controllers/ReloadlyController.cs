@@ -15,13 +15,13 @@ namespace Api.Controllers
         {
             _reloadlyClient = reloadlyClient;
         }
-        // POST
-        [HttpPost("GetToken")]
-        public async Task<ActionResult<Response<GetAccessTokenResponse>>> GetAccessTokenAsync()
-        {
-            var response = await _reloadlyClient.GetAccessTokenAsync();
-            return StatusCode(response.StatusCode, response);
-        }
+        // // POST
+        // [HttpPost("GetToken")]
+        // public async Task<ActionResult<Response<GetAccessTokenResponse>>> GetAccessTokenAsync()
+        // {
+        //     var response = await _reloadlyClient.GetAccessTokenAsync();
+        //     return StatusCode(response.StatusCode, response);
+        // }
         // GET
         [HttpGet("view-balance")]
         public async Task<ActionResult<Response<ViewBalanceResponse>>> ViewBalanceAsync()
@@ -32,9 +32,11 @@ namespace Api.Controllers
         
         // POST
         [HttpPost("top-up")]
-        public async Task<ActionResult<Response<TopUpResponse>>> TopUpAsync()
+        public async Task<ActionResult<Response<TopUpResponse>>> 
+            TopUpAsync([FromForm] int amount, string recipientCountryCode, string recipientNumber) 
         {
-            var response = await _reloadlyClient.TopUpAsync();
+            var response = await _reloadlyClient
+                .TopUpAsync(amount, recipientCountryCode, recipientNumber );
             return StatusCode(response.StatusCode, response);
         }
     }

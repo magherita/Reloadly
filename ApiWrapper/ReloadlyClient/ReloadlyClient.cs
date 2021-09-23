@@ -1,5 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
+using ApiWrapper.ReloadlyClient.Requests;
 using ApiWrapper.ReloadlyClient.Responses;
 using ApiWrapper.Requests;
 using Flurl.Http;
@@ -64,7 +65,7 @@ namespace ApiWrapper.ReloadlyClient
         {
             if (_accessTokenResponse.Error != null)
             {
-                new Response<ViewBalanceResponse>()
+               return new Response<ViewBalanceResponse>()
                 {
                     StatusCode = _accessTokenResponse.StatusCode,
                     Error = _accessTokenResponse.Error
@@ -99,11 +100,11 @@ namespace ApiWrapper.ReloadlyClient
             };
         }
 
-        public async Task<Response<TopUpResponse>> TopUpAsync(CancellationToken cancellationToken = default)
+        public async Task<Response<TopUpResponse>> TopUpAsync(int amount, string recipientCountryCode, string recipientNumber,CancellationToken cancellationToken = default)
         {
             if (_accessTokenResponse.Error != null)
             {
-                new Response<TopUpResponse>()
+                return new Response<TopUpResponse>()
                 {
                     StatusCode = _accessTokenResponse.StatusCode,
                     Error = _accessTokenResponse.Error
@@ -112,7 +113,21 @@ namespace ApiWrapper.ReloadlyClient
 
             var request = new TopUpRequest()
             {
-
+                OperatorId = 341,
+                Amount = amount,
+                UseLocalAmount = false,
+                CustomIdentifier = "airtime",
+                RecipientPhone = new RecipientPhone()
+                {
+                    Number = recipientNumber,
+                    CountryCode = recipientCountryCode
+                },
+                SenderPhone = new SenderPhone()
+                {
+                    CountryCode = "CA",
+                    Number = "+1231231231"
+                }
+                
             };
          
             var accessToken = _accessTokenResponse.Data.Access_Token;
@@ -126,8 +141,10 @@ namespace ApiWrapper.ReloadlyClient
                 {
                    operatorId = request.OperatorId,
                    amount = request.Amount,
-                   receiverPhone = request.RecipientPhone,
-                   number = request.SenderPhone
+                   recipientPhone = request.RecipientPhone,
+                   number = request.SenderPhone,
+                   useLocalAmount = request.UseLocalAmount,
+                   customIdentifier = request.CustomIdentifier,
                 });
             
             if (result.StatusCode >= 300)

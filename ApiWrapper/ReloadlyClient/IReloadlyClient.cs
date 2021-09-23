@@ -8,7 +8,7 @@ namespace ApiWrapper.ReloadlyClient
     {
         Task<Response<GetAccessTokenResponse>> GetAccessTokenAsync(CancellationToken cancellationToken = default);
         Task<Response<ViewBalanceResponse>> ViewBalanceAsync(CancellationToken cancellationToken = default);
-        Task<Response<TopUpResponse>> TopUpAsync(CancellationToken cancellationToken = default);
+        Task<Response<TopUpResponse>> TopUpAsync(int amount, string recipientCountryCode, string recipientNumber,CancellationToken cancellationToken = default);
         Task<Response<TopUpStatusResponse>> TopUpStatusAsync(CancellationToken cancellationToken = default);
     }
 }

@@ -3025,7 +3025,9 @@
           "Flurl.Http.Signed": "3.2.0",
           "Flurl.Signed": "3.0.2",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "5.0.0"
+          "Microsoft.Extensions.Configuration.Binder": "5.0.0",
+          "System.Memory": "4.5.4",
+          "System.Text.Encoding.Extensions": "4.3.0"
         },
         "compile": {
           "bin/placeholder/ApiWrapper.dll": {}

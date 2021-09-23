@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "f84WdUehCJ9AdN+O0i54YOqcQlKy7rvR42ljsxaM1PuSv1vHHYZzPynAfiaHwKjWsIeQ5KjkBKidhBfuwtBRXg==",
+  "dgSpecHash": "pj/8Nfdf7Okq4vLRAuV2UnO5FfdB0/4VzqJngQPbM94lecHp70b/D1nAAGOMy0mTQzGRmmvoVPjPqN9d0WYf/Q==",
   "success": true,
   "projectFilePath": "/home/dani/RiderProjects/FlutterwaveHackathon/ApiWrapper/ApiWrapper.csproj",
   "expectedPackageFiles": [
@@ -105,6 +105,7 @@
     "/home/dani/.nuget/packages/system.io.filesystem.primitives/4.3.0/system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "/home/dani/.nuget/packages/system.linq/4.3.0/system.linq.4.3.0.nupkg.sha512",
     "/home/dani/.nuget/packages/system.linq.expressions/4.3.0/system.linq.expressions.4.3.0.nupkg.sha512",
+    "/home/dani/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/home/dani/.nuget/packages/system.net.http/4.3.0/system.net.http.4.3.0.nupkg.sha512",
     "/home/dani/.nuget/packages/system.net.nameresolution/4.0.0/system.net.nameresolution.4.0.0.nupkg.sha512",
     "/home/dani/.nuget/packages/system.net.networkinformation/4.1.0/system.net.networkinformation.4.1.0.nupkg.sha512",

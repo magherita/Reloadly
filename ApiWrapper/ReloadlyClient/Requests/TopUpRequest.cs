@@ -1,4 +1,4 @@
-namespace ApiWrapper.Requests
+namespace ApiWrapper.ReloadlyClient.Requests
 {
     public class RecipientPhone
     {
@@ -14,8 +14,8 @@ namespace ApiWrapper.Requests
 
     public class TopUpRequest
     {
-        public string OperatorId { get; set; }
-        public string Amount { get; set; }
+        public int OperatorId { get; set; }
+        public int Amount { get; set; }
         public bool UseLocalAmount { get; set; }
         public string CustomIdentifier { get; set; }
         public RecipientPhone RecipientPhone { get; set; }
