@@ -124,7 +124,7 @@ namespace ApiWrapper.ReloadlyClient
                 SenderPhone = new SenderPhone()
                 {
                     CountryCode = "CA",
-                    Number = "+1231231231"
+                    Number = "1231231231"
                 }
                 
             };
