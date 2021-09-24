@@ -1,6 +1,9 @@
 using System.Text;
+using ApiWrapper;
+using ApiWrapper.FlutterwaveClient;
 using ApiWrapper.ReloadlyClient;
 using Application.Extensions;
+using Application.Flutterwave;
 using Database.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -57,6 +60,8 @@ namespace Api
             services.AddDatabaseLayer();
             services.AddApplicationLayer();
             services.AddScoped<IReloadlyClient, ReloadlyClient>();
+            services.AddScoped<IFlutterwaveClient, FlutterwaveClient>();
+            services.AddScoped<IFlutterwaveService, FlutterwaveService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
