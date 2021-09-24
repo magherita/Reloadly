@@ -18,7 +18,7 @@ namespace ApiWrapper.FlutterwaveClient.Requests
         public string Email { get; set; }
         public string Tx_Ref { get; set; }
         public string Redirect_Url { get; set; }
-        public Authorization Authorization { get; set; }
+        //public Authorization Authorization { get; set; }
     }
 
 
